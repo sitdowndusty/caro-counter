@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shot Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 50px;
+        }
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .counter {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 200px;
+        }
+        .counter h2 {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Basketball Shot Counter</h1>
+    <div class="counter-container">
+        <div class="counter">
+            <h2>Shots Taken</h2>
+            <p id="shots-taken">0</p>
+            <button id="increase-taken">+1 Shot Taken</button>
+        </div>
+        <div class="counter">
+            <h2>Shots Made</h2>
+            <p id="shots-made">0</p>
+            <button id="increase-made">+1 Shot Made</button>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("increase-taken").addEventListener("click", () => {
+            let shotsTaken = document.getElementById("shots-taken");
+            shotsTaken.textContent = parseInt(shotsTaken.textContent) + 1;
+        });
+
+        document.getElementById("increase-made").addEventListener("click", () => {
+            let shotsMade = document.getElementById("shots-made");
+            shotsMade.textContent = parseInt(shotsMade.textContent) + 1;
+        });
+    </script>
+</body>
+</html>
